@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{42AB776F-B7EE-4DB9-AD9D-8EE5CB5820CF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System</RootNamespace>
+    <AssemblyName>System.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\Managed\System.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Action.2.cs" />
+    <Compile Include="Action.3.cs" />
+    <Compile Include="Action.4.cs" />
+    <Compile Include="Action.5.cs" />
+    <Compile Include="Action.6.cs" />
+    <Compile Include="Action.7.cs" />
+    <Compile Include="Action.8.cs" />
+    <Compile Include="Action.cs" />
+    <Compile Include="Collections\Generic\ArrayBuilder.cs" />
+    <Compile Include="Collections\Generic\BitHelper.cs" />
+    <Compile Include="Collections\Generic\CopyPosition.cs" />
+    <Compile Include="Collections\Generic\EnumerableHelpers.cs" />
+    <Compile Include="Collections\Generic\HashSet.cs" />
+    <Compile Include="Collections\Generic\ICollectionDebugView.cs" />
+    <Compile Include="Collections\Generic\LargeArrayBuilder.cs" />
+    <Compile Include="Collections\Generic\Marker.cs" />
+    <Compile Include="Collections\Generic\ReferenceEqualityComparer.cs" />
+    <Compile Include="Collections\Generic\SparseArrayBuilder.cs" />
+    <Compile Include="Dynamic\BinaryOperationBinder.cs" />
+    <Compile Include="Dynamic\BindingRestrictions.cs" />
+    <Compile Include="Dynamic\ConvertBinder.cs" />
+    <Compile Include="Dynamic\CreateInstanceBinder.cs" />
+    <Compile Include="Dynamic\DeleteIndexBinder.cs" />
+    <Compile Include="Dynamic\DeleteMemberBinder.cs" />
+    <Compile Include="Dynamic\DynamicMetaObject.cs" />
+    <Compile Include="Dynamic\DynamicMetaObjectBinder.cs" />
+    <Compile Include="Dynamic\ExpandoClass.cs" />
+    <Compile Include="Dynamic\ExpandoObject.cs" />
+    <Compile Include="Dynamic\GetIndexBinder.cs" />
+    <Compile Include="Dynamic\GetMemberBinder.cs" />
+    <Compile Include="Dynamic\IDynamicMetaObjectProvider.cs" />
+    <Compile Include="Dynamic\InvokeBinder.cs" />
+    <Compile Include="Dynamic\InvokeMemberBinder.cs" />
+    <Compile Include="Dynamic\SetIndexBinder.cs" />
+    <Compile Include="Dynamic\SetMemberBinder.cs" />
+    <Compile Include="Dynamic\UnaryOperationBinder.cs" />
+    <Compile Include="Dynamic\UpdateDelegates.cs" />
+    <Compile Include="Dynamic\Utils\CacheDict.cs" />
+    <Compile Include="Dynamic\Utils\CollectionExtensions.cs" />
+    <Compile Include="Dynamic\Utils\ContractUtils.cs" />
+    <Compile Include="Dynamic\Utils\EmptyReadOnlyCollection.cs" />
+    <Compile Include="Dynamic\Utils\ExpressionUtils.cs" />
+    <Compile Include="Dynamic\Utils\ExpressionVisitorUtils.cs" />
+    <Compile Include="Dynamic\Utils\Helpers.cs" />
+    <Compile Include="Dynamic\Utils\ListParameterProvider.cs" />
+    <Compile Include="Dynamic\Utils\ListProvider.cs" />
+    <Compile Include="Dynamic\Utils\TypeExtensions.cs" />
+    <Compile Include="Dynamic\Utils\TypeUtils.cs" />
+    <Compile Include="Func.2.cs" />
+    <Compile Include="Func.3.cs" />
+    <Compile Include="Func.4.cs" />
+    <Compile Include="Func.5.cs" />
+    <Compile Include="Func.6.cs" />
+    <Compile Include="Func.7.cs" />
+    <Compile Include="Func.8.cs" />
+    <Compile Include="Func.cs" />
+    <Compile Include="Linq\Buffer.cs" />
+    <Compile Include="Linq\CachingComparer.2.cs" />
+    <Compile Include="Linq\CachingComparer.cs" />
+    <Compile Include="Linq\CachingComparerWithChild.cs" />
+    <Compile Include="Linq\EmptyPartition.cs" />
+    <Compile Include="Linq\Enumerable.cs" />
+    <Compile Include="Linq\EnumerableSorter.2.cs" />
+    <Compile Include="Linq\EnumerableSorter.cs" />
+    <Compile Include="Linq\Error.cs" />
+    <Compile Include="Linq\Expressions\AnalyzeTypeIsResult.cs" />
+    <Compile Include="Linq\Expressions\ArrayBuilderExtensions.cs" />
+    <Compile Include="Linq\Expressions\AssignBinaryExpression.cs" />
+    <Compile Include="Linq\Expressions\BinaryExpression.cs" />
+    <Compile Include="Linq\Expressions\Block2.cs" />
+    <Compile Include="Linq\Expressions\Block3.cs" />
+    <Compile Include="Linq\Expressions\Block4.cs" />
+    <Compile Include="Linq\Expressions\Block5.cs" />
+    <Compile Include="Linq\Expressions\BlockExpression.cs" />
+    <Compile Include="Linq\Expressions\BlockExpressionList.cs" />
+    <Compile Include="Linq\Expressions\BlockN.cs" />
+    <Compile Include="Linq\Expressions\ByRefAssignBinaryExpression.cs" />
+    <Compile Include="Linq\Expressions\ByRefParameterExpression.cs" />
+    <Compile Include="Linq\Expressions\CachedReflectionInfo.cs" />
+    <Compile Include="Linq\Expressions\CatchBlock.cs" />
+    <Compile Include="Linq\Expressions\CoalesceConversionBinaryExpression.cs" />
+    <Compile Include="Linq\Expressions\Compiler\AnalyzedTree.cs" />
+    <Compile Include="Linq\Expressions\Compiler\BoundConstants.cs" />
+    <Compile Include="Linq\Expressions\Compiler\CompilerScope.cs" />
+    <Compile Include="Linq\Expressions\Compiler\DelegateHelpers.cs" />
+    <Compile Include="Linq\Expressions\Compiler\HoistedLocals.cs" />
+    <Compile Include="Linq\Expressions\Compiler\ILGen.cs" />
+    <Compile Include="Linq\Expressions\Compiler\ILocalCache.cs" />
+    <Compile Include="Linq\Expressions\Compiler\KeyedStack.cs" />
+    <Compile Include="Linq\Expressions\Compiler\LabelInfo.cs" />
+    <Compile Include="Linq\Expressions\Compiler\LabelScopeInfo.cs" />
+    <Compile Include="Linq\Expressions\Compiler\LabelScopeKind.cs" />
+    <Compile Include="Linq\Expressions\Compiler\LambdaCompiler.cs" />
+    <Compile Include="Linq\Expressions\Compiler\ParameterList.cs" />
+    <Compile Include="Linq\Expressions\Compiler\ParameterProviderExtensions.cs" />
+    <Compile Include="Linq\Expressions\Compiler\SpilledExpressionBlock.cs" />
+    <Compile Include="Linq\Expressions\Compiler\StackSpiller.cs" />
+    <Compile Include="Linq\Expressions\Compiler\VariableBinder.cs" />
+    <Compile Include="Linq\Expressions\Compiler\VariableStorageKind.cs" />
+    <Compile Include="Linq\Expressions\ConditionalExpression.cs" />
+    <Compile Include="Linq\Expressions\ConstantCheck.cs" />
+    <Compile Include="Linq\Expressions\ConstantExpression.cs" />
+    <Compile Include="Linq\Expressions\DebugInfoExpression.cs" />
+    <Compile Include="Linq\Expressions\DefaultExpression.cs" />
+    <Compile Include="Linq\Expressions\ElementInit.cs" />
+    <Compile Include="Linq\Expressions\Error.cs" />
+    <Compile Include="Linq\Expressions\Expression.2.cs" />
+    <Compile Include="Linq\Expressions\Expression.cs" />
+    <Compile Include="Linq\Expressions\Expression0.cs" />
+    <Compile Include="Linq\Expressions\Expression1.cs" />
+    <Compile Include="Linq\Expressions\Expression2.cs" />
+    <Compile Include="Linq\Expressions\Expression3.cs" />
+    <Compile Include="Linq\Expressions\ExpressionN.cs" />
+    <Compile Include="Linq\Expressions\ExpressionStringBuilder.cs" />
+    <Compile Include="Linq\Expressions\ExpressionType.cs" />
+    <Compile Include="Linq\Expressions\ExpressionVisitor.cs" />
+    <Compile Include="Linq\Expressions\FieldExpression.cs" />
+    <Compile Include="Linq\Expressions\FullConditionalExpression.cs" />
+    <Compile Include="Linq\Expressions\FullConditionalExpressionWithType.cs" />
+    <Compile Include="Linq\Expressions\FullExpression.cs" />
+    <Compile Include="Linq\Expressions\GotoExpression.cs" />
+    <Compile Include="Linq\Expressions\GotoExpressionKind.cs" />
+    <Compile Include="Linq\Expressions\IArgumentProvider.cs" />
+    <Compile Include="Linq\Expressions\IDynamicExpression.cs" />
+    <Compile Include="Linq\Expressions\IndexExpression.cs" />
+    <Compile Include="Linq\Expressions\InstanceMethodCallExpression.cs" />
+    <Compile Include="Linq\Expressions\InstanceMethodCallExpression0.cs" />
+    <Compile Include="Linq\Expressions\InstanceMethodCallExpression1.cs" />
+    <Compile Include="Linq\Expressions\InstanceMethodCallExpression2.cs" />
+    <Compile Include="Linq\Expressions\InstanceMethodCallExpression3.cs" />
+    <Compile Include="Linq\Expressions\InstanceMethodCallExpressionN.cs" />
+    <Compile Include="Linq\Expressions\InvocationExpression.cs" />
+    <Compile Include="Linq\Expressions\InvocationExpression0.cs" />
+    <Compile Include="Linq\Expressions\InvocationExpression1.cs" />
+    <Compile Include="Linq\Expressions\InvocationExpression2.cs" />
+    <Compile Include="Linq\Expressions\InvocationExpression3.cs" />
+    <Compile Include="Linq\Expressions\InvocationExpression4.cs" />
+    <Compile Include="Linq\Expressions\InvocationExpression5.cs" />
+    <Compile Include="Linq\Expressions\InvocationExpressionN.cs" />
+    <Compile Include="Linq\Expressions\IParameterProvider.cs" />
+    <Compile Include="Linq\Expressions\LabelExpression.cs" />
+    <Compile Include="Linq\Expressions\LabelTarget.cs" />
+    <Compile Include="Linq\Expressions\LambdaExpression.cs" />
+    <Compile Include="Linq\Expressions\ListInitExpression.cs" />
+    <Compile Include="Linq\Expressions\LogicalBinaryExpression.cs" />
+    <Compile Include="Linq\Expressions\LoopExpression.cs" />
+    <Compile Include="Linq\Expressions\MemberAssignment.cs" />
+    <Compile Include="Linq\Expressions\MemberBinding.cs" />
+    <Compile Include="Linq\Expressions\MemberBindingType.cs" />
+    <Compile Include="Linq\Expressions\MemberExpression.cs" />
+    <Compile Include="Linq\Expressions\MemberInitExpression.cs" />
+    <Compile Include="Linq\Expressions\MemberListBinding.cs" />
+    <Compile Include="Linq\Expressions\MemberMemberBinding.cs" />
+    <Compile Include="Linq\Expressions\MethodBinaryExpression.cs" />
+    <Compile Include="Linq\Expressions\MethodCallExpression.cs" />
+    <Compile Include="Linq\Expressions\MethodCallExpression0.cs" />
+    <Compile Include="Linq\Expressions\MethodCallExpression1.cs" />
+    <Compile Include="Linq\Expressions\MethodCallExpression2.cs" />
+    <Compile Include="Linq\Expressions\MethodCallExpression3.cs" />
+    <Compile Include="Linq\Expressions\MethodCallExpression4.cs" />
+    <Compile Include="Linq\Expressions\MethodCallExpression5.cs" />
+    <Compile Include="Linq\Expressions\MethodCallExpressionN.cs" />
+    <Compile Include="Linq\Expressions\NewArrayBoundsExpression.cs" />
+    <Compile Include="Linq\Expressions\NewArrayExpression.cs" />
+    <Compile Include="Linq\Expressions\NewArrayInitExpression.cs" />
+    <Compile Include="Linq\Expressions\NewExpression.cs" />
+    <Compile Include="Linq\Expressions\OpAssignMethodConversionBinaryExpression.cs" />
+    <Compile Include="Linq\Expressions\ParameterExpression.cs" />
+    <Compile Include="Linq\Expressions\PrimitiveParameterExpression.cs" />
+    <Compile Include="Linq\Expressions\PropertyExpression.cs" />
+    <Compile Include="Linq\Expressions\RuntimeVariablesExpression.cs" />
+    <Compile Include="Linq\Expressions\Scope1.cs" />
+    <Compile Include="Linq\Expressions\ScopeExpression.cs" />
+    <Compile Include="Linq\Expressions\ScopeN.cs" />
+    <Compile Include="Linq\Expressions\ScopeWithType.cs" />
+    <Compile Include="Linq\Expressions\SimpleBinaryExpression.cs" />
+    <Compile Include="Linq\Expressions\StackGuard.cs" />
+    <Compile Include="Linq\Expressions\Strings.cs" />
+    <Compile Include="Linq\Expressions\SwitchCase.cs" />
+    <Compile Include="Linq\Expressions\SwitchExpression.cs" />
+    <Compile Include="Linq\Expressions\TryExpression.cs" />
+    <Compile Include="Linq\Expressions\TypeBinaryExpression.cs" />
+    <Compile Include="Linq\Expressions\TypedConstantExpression.cs" />
+    <Compile Include="Linq\Expressions\TypedParameterExpression.cs" />
+    <Compile Include="Linq\Expressions\UnaryExpression.cs" />
+    <Compile Include="Linq\Expressions\Utils.cs" />
+    <Compile Include="Linq\GroupedEnumerable.cs" />
+    <Compile Include="Linq\Grouping.cs" />
+    <Compile Include="Linq\IGrouping.cs" />
+    <Compile Include="Linq\IIListProvider.cs" />
+    <Compile Include="Linq\IOrderedEnumerable.cs" />
+    <Compile Include="Linq\IPartition.cs" />
+    <Compile Include="Linq\Lookup.cs" />
+    <Compile Include="Linq\OrderedEnumerable.2.cs" />
+    <Compile Include="Linq\OrderedEnumerable.cs" />
+    <Compile Include="Linq\OrderedPartition.cs" />
+    <Compile Include="Linq\Set.cs" />
+    <Compile Include="Linq\SingleLinkedNode.cs" />
+    <Compile Include="Linq\SystemLinq_GroupingDebugView.cs" />
+    <Compile Include="Linq\SystemLinq_LookupDebugView.cs" />
+    <Compile Include="Linq\Utilities.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Runtime\CompilerServices\CallSite.2.cs" />
+    <Compile Include="Runtime\CompilerServices\CallSite.cs" />
+    <Compile Include="Runtime\CompilerServices\CallSiteBinder.cs" />
+    <Compile Include="Runtime\CompilerServices\CallSiteOps.cs" />
+    <Compile Include="Runtime\CompilerServices\Closure.cs" />
+    <Compile Include="Runtime\CompilerServices\IRuntimeVariables.cs" />
+    <Compile Include="Runtime\CompilerServices\IStrongBox.cs" />
+    <Compile Include="Runtime\CompilerServices\ReadOnlyCollectionBuilder.cs" />
+    <Compile Include="Runtime\CompilerServices\RuleCache.cs" />
+    <Compile Include="Runtime\CompilerServices\RuntimeOps.cs" />
+    <Compile Include="Runtime\CompilerServices\StrongBox.cs" />
+    <Compile Include="Runtime\CompilerServices\TrueReadOnlyCollection.cs" />
+    <Compile Include="Security\Cryptography\AesCryptoServiceProvider.cs" />
+    <Compile Include="Security\Cryptography\AesManaged.cs" />
+    <Compile Include="Security\Cryptography\AesTransform.cs" />
+    <Compile Include="Security\Cryptography\IncrementalHash.cs" />
+    <Compile Include="Security\Cryptography\X509Certificates\RSACertificateExtensions.cs" />
+    <Compile Include="SR.cs" />
+    <Compile Include="Threading\LockRecursionPolicy.cs" />
+    <Compile Include="Threading\ReaderWriterCount.cs" />
+    <Compile Include="Threading\ReaderWriterLockSlim.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

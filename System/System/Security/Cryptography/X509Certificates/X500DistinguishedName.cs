@@ -1,0 +1,252 @@
+﻿using System;
+using System.Text;
+using Mono.Security;
+using Mono.Security.X509;
+
+namespace System.Security.Cryptography.X509Certificates
+{
+	/// <summary>Represents the distinguished name of an X509 certificate. This class cannot be inherited.</summary>
+	// Token: 0x020001BA RID: 442
+	[MonoTODO("Some X500DistinguishedNameFlags options aren't supported, like DoNotUsePlusSign, DoNotUseQuotes and ForceUTF8Encoding")]
+	public sealed class X500DistinguishedName : AsnEncodedData
+	{
+		/// <summary>Initializes a new instance of the <see cref="T:System.Security.Cryptography.X509Certificates.X500DistinguishedName" /> class using information from the specified byte array.</summary>
+		/// <param name="encodedDistinguishedName">A byte array that contains distinguished name information.</param>
+		// Token: 0x06000A4D RID: 2637 RVA: 0x00034F8D File Offset: 0x0003318D
+		public X500DistinguishedName(byte[] encodedDistinguishedName)
+		{
+			if (encodedDistinguishedName == null)
+			{
+				throw new ArgumentNullException("encodedDistinguishedName");
+			}
+			base.Oid = new Oid();
+			base.RawData = encodedDistinguishedName;
+			if (encodedDistinguishedName.Length != 0)
+			{
+				this.DecodeRawData();
+				return;
+			}
+			this.name = string.Empty;
+		}
+
+		/// <summary>Initializes a new instance of the <see cref="T:System.Security.Cryptography.X509Certificates.X500DistinguishedName" /> class using information from the specified string.</summary>
+		/// <param name="distinguishedName">A string that represents the distinguished name.</param>
+		// Token: 0x06000A4E RID: 2638 RVA: 0x00034FCB File Offset: 0x000331CB
+		public X500DistinguishedName(string distinguishedName)
+			: this(distinguishedName, X500DistinguishedNameFlags.Reversed)
+		{
+		}
+
+		/// <summary>Initializes a new instance of the <see cref="T:System.Security.Cryptography.X509Certificates.X500DistinguishedName" /> class using the specified string and <see cref="T:System.Security.Cryptography.X509Certificates.X500DistinguishedNameFlags" /> flag.</summary>
+		/// <param name="distinguishedName">A string that represents the distinguished name.</param>
+		/// <param name="flag">A bitwise combination of the enumeration values that specify the characteristics of the distinguished name.</param>
+		// Token: 0x06000A4F RID: 2639 RVA: 0x00034FD8 File Offset: 0x000331D8
+		public X500DistinguishedName(string distinguishedName, X500DistinguishedNameFlags flag)
+		{
+			if (distinguishedName == null)
+			{
+				throw new ArgumentNullException("distinguishedName");
+			}
+			if (flag != X500DistinguishedNameFlags.None && (flag & (X500DistinguishedNameFlags.Reversed | X500DistinguishedNameFlags.UseSemicolons | X500DistinguishedNameFlags.DoNotUsePlusSign | X500DistinguishedNameFlags.DoNotUseQuotes | X500DistinguishedNameFlags.UseCommas | X500DistinguishedNameFlags.UseNewLines | X500DistinguishedNameFlags.UseUTF8Encoding | X500DistinguishedNameFlags.UseT61Encoding | X500DistinguishedNameFlags.ForceUTF8Encoding)) == X500DistinguishedNameFlags.None)
+			{
+				throw new ArgumentException("flag");
+			}
+			base.Oid = new Oid();
+			if (distinguishedName.Length == 0)
+			{
+				byte[] array = new byte[2];
+				array[0] = 48;
+				base.RawData = array;
+				this.DecodeRawData();
+				return;
+			}
+			Mono.Security.ASN1 asn = X501.FromString(distinguishedName);
+			if ((flag & X500DistinguishedNameFlags.Reversed) != X500DistinguishedNameFlags.None)
+			{
+				Mono.Security.ASN1 asn2 = new Mono.Security.ASN1(48);
+				for (int i = asn.Count - 1; i >= 0; i--)
+				{
+					asn2.Add(asn[i]);
+				}
+				asn = asn2;
+			}
+			base.RawData = asn.GetBytes();
+			if (flag == X500DistinguishedNameFlags.None)
+			{
+				this.name = distinguishedName;
+				return;
+			}
+			this.name = this.Decode(flag);
+		}
+
+		/// <summary>Gets the comma-delimited distinguished name from an X500 certificate.</summary>
+		/// <returns>The comma-delimited distinguished name of the X509 certificate.</returns>
+		// Token: 0x170001C4 RID: 452
+		// (get) Token: 0x06000A50 RID: 2640 RVA: 0x00035096 File Offset: 0x00033296
+		public string Name
+		{
+			get
+			{
+				return this.name;
+			}
+		}
+
+		/// <summary>Decodes a distinguished name using the characteristics specified by the <paramref name="flag" /> parameter.</summary>
+		/// <returns>The decoded distinguished name.</returns>
+		/// <param name="flag">A bitwise combination of the enumeration values that specify the characteristics of the distinguished name.</param>
+		/// <exception cref="T:System.Security.Cryptography.CryptographicException">The certificate has an invalid name.</exception>
+		// Token: 0x06000A51 RID: 2641 RVA: 0x000350A0 File Offset: 0x000332A0
+		public string Decode(X500DistinguishedNameFlags flag)
+		{
+			if (flag != X500DistinguishedNameFlags.None && (flag & (X500DistinguishedNameFlags.Reversed | X500DistinguishedNameFlags.UseSemicolons | X500DistinguishedNameFlags.DoNotUsePlusSign | X500DistinguishedNameFlags.DoNotUseQuotes | X500DistinguishedNameFlags.UseCommas | X500DistinguishedNameFlags.UseNewLines | X500DistinguishedNameFlags.UseUTF8Encoding | X500DistinguishedNameFlags.UseT61Encoding | X500DistinguishedNameFlags.ForceUTF8Encoding)) == X500DistinguishedNameFlags.None)
+			{
+				throw new ArgumentException("flag");
+			}
+			if (base.RawData.Length == 0)
+			{
+				return string.Empty;
+			}
+			bool flag2 = (flag & X500DistinguishedNameFlags.Reversed) > X500DistinguishedNameFlags.None;
+			bool flag3 = (flag & X500DistinguishedNameFlags.DoNotUseQuotes) == X500DistinguishedNameFlags.None;
+			string separator = X500DistinguishedName.GetSeparator(flag);
+			return X501.ToString(new Mono.Security.ASN1(base.RawData), flag2, separator, flag3);
+		}
+
+		/// <summary>Returns a formatted version of an X500 distinguished name for printing or for output to a text window or to a console.</summary>
+		/// <returns>A formatted string that represents the X500 distinguished name.</returns>
+		/// <param name="multiLine">true if the return string should contain carriage returns; otherwise, false.</param>
+		// Token: 0x06000A52 RID: 2642 RVA: 0x000350FC File Offset: 0x000332FC
+		public override string Format(bool multiLine)
+		{
+			if (!multiLine)
+			{
+				return this.Decode(X500DistinguishedNameFlags.UseCommas);
+			}
+			string text = this.Decode(X500DistinguishedNameFlags.UseNewLines);
+			if (text.Length > 0)
+			{
+				return text + Environment.NewLine;
+			}
+			return text;
+		}
+
+		// Token: 0x06000A53 RID: 2643 RVA: 0x0003513A File Offset: 0x0003333A
+		private static string GetSeparator(X500DistinguishedNameFlags flag)
+		{
+			if ((flag & X500DistinguishedNameFlags.UseSemicolons) != X500DistinguishedNameFlags.None)
+			{
+				return "; ";
+			}
+			if ((flag & X500DistinguishedNameFlags.UseCommas) != X500DistinguishedNameFlags.None)
+			{
+				return ", ";
+			}
+			if ((flag & X500DistinguishedNameFlags.UseNewLines) != X500DistinguishedNameFlags.None)
+			{
+				return Environment.NewLine;
+			}
+			return ", ";
+		}
+
+		// Token: 0x06000A54 RID: 2644 RVA: 0x0003516C File Offset: 0x0003336C
+		private void DecodeRawData()
+		{
+			if (base.RawData == null || base.RawData.Length < 3)
+			{
+				this.name = string.Empty;
+				return;
+			}
+			Mono.Security.ASN1 asn = new Mono.Security.ASN1(base.RawData);
+			this.name = X501.ToString(asn, true, ", ", true);
+		}
+
+		// Token: 0x06000A55 RID: 2645 RVA: 0x000351B8 File Offset: 0x000333B8
+		private static string Canonize(string s)
+		{
+			int i = s.IndexOf('=') + 1;
+			StringBuilder stringBuilder = new StringBuilder(s.Substring(0, i));
+			while (i < s.Length && char.IsWhiteSpace(s, i))
+			{
+				i++;
+			}
+			s = s.TrimEnd();
+			bool flag = false;
+			while (i < s.Length)
+			{
+				if (!flag)
+				{
+					goto IL_004B;
+				}
+				flag = char.IsWhiteSpace(s, i);
+				if (!flag)
+				{
+					goto IL_004B;
+				}
+				IL_0069:
+				i++;
+				continue;
+				IL_004B:
+				if (char.IsWhiteSpace(s, i))
+				{
+					flag = true;
+				}
+				stringBuilder.Append(char.ToUpperInvariant(s[i]));
+				goto IL_0069;
+			}
+			return stringBuilder.ToString();
+		}
+
+		// Token: 0x06000A56 RID: 2646 RVA: 0x00035244 File Offset: 0x00033444
+		internal static bool AreEqual(X500DistinguishedName name1, X500DistinguishedName name2)
+		{
+			if (name1 == null)
+			{
+				return name2 == null;
+			}
+			if (name2 == null)
+			{
+				return false;
+			}
+			if (name1.canonEncoding != null && name2.canonEncoding != null)
+			{
+				if (name1.canonEncoding.Length != name2.canonEncoding.Length)
+				{
+					return false;
+				}
+				for (int i = 0; i < name1.canonEncoding.Length; i++)
+				{
+					if (name1.canonEncoding[i] != name2.canonEncoding[i])
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+			else
+			{
+				X500DistinguishedNameFlags x500DistinguishedNameFlags = X500DistinguishedNameFlags.DoNotUseQuotes | X500DistinguishedNameFlags.UseNewLines;
+				string[] array = new string[] { Environment.NewLine };
+				string[] array2 = name1.Decode(x500DistinguishedNameFlags).Split(array, StringSplitOptions.RemoveEmptyEntries);
+				string[] array3 = name2.Decode(x500DistinguishedNameFlags).Split(array, StringSplitOptions.RemoveEmptyEntries);
+				if (array2.Length != array3.Length)
+				{
+					return false;
+				}
+				for (int j = 0; j < array2.Length; j++)
+				{
+					if (X500DistinguishedName.Canonize(array2[j]) != X500DistinguishedName.Canonize(array3[j]))
+					{
+						return false;
+					}
+				}
+				return true;
+			}
+		}
+
+		// Token: 0x04000816 RID: 2070
+		private string name;
+
+		// Token: 0x04000817 RID: 2071
+		private byte[] canonEncoding;
+	}
+}

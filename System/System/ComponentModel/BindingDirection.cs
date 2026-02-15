@@ -1,0 +1,16 @@
+﻿using System;
+
+namespace System.ComponentModel
+{
+	/// <summary>Specifies whether the template can be bound one way or two ways.</summary>
+	// Token: 0x0200025A RID: 602
+	public enum BindingDirection
+	{
+		/// <summary>The template can only accept property values. Used with a generic <see cref="T:System.Web.UI.ITemplate" />.</summary>
+		// Token: 0x040009C7 RID: 2503
+		OneWay,
+		/// <summary>The template can accept and expose property values. Used with an <see cref="T:System.Web.UI.IBindableTemplate" />.</summary>
+		// Token: 0x040009C8 RID: 2504
+		TwoWay
+	}
+}

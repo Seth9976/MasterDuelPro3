@@ -1,0 +1,23 @@
+﻿using System;
+
+namespace System
+{
+	// Token: 0x02000002 RID: 2
+	[AttributeUsage(AttributeTargets.All, AllowMultiple = true)]
+	internal class MonoTODOAttribute : Attribute
+	{
+		// Token: 0x06000001 RID: 1 RVA: 0x00002050 File Offset: 0x00000250
+		public MonoTODOAttribute()
+		{
+		}
+
+		// Token: 0x06000002 RID: 2 RVA: 0x00002058 File Offset: 0x00000258
+		public MonoTODOAttribute(string comment)
+		{
+			this.comment = comment;
+		}
+
+		// Token: 0x04000001 RID: 1
+		private string comment;
+	}
+}

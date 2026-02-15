@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4ABC37D-D132-4A35-909C-2ACBB7594D0C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System</RootNamespace>
+    <AssemblyName>System.Drawing</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\Managed\System.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Drawing\AnimateEventArgs.cs" />
+    <Compile Include="Drawing\Bitmap.cs" />
+    <Compile Include="Drawing\Brush.cs" />
+    <Compile Include="Drawing\Brushes.cs" />
+    <Compile Include="Drawing\CarbonContext.cs" />
+    <Compile Include="Drawing\CGPoint32.cs" />
+    <Compile Include="Drawing\CGPoint64.cs" />
+    <Compile Include="Drawing\CGRect32.cs" />
+    <Compile Include="Drawing\CGRect64.cs" />
+    <Compile Include="Drawing\CGSize32.cs" />
+    <Compile Include="Drawing\CGSize64.cs" />
+    <Compile Include="Drawing\ClientUtils.cs" />
+    <Compile Include="Drawing\CocoaContext.cs" />
+    <Compile Include="Drawing\Color.cs" />
+    <Compile Include="Drawing\ColorConverter.cs" />
+    <Compile Include="Drawing\ColorTable.cs" />
+    <Compile Include="Drawing\ColorTranslator.cs" />
+    <Compile Include="Drawing\ColorUtil.cs" />
+    <Compile Include="Drawing\ComIStreamMarshaler.cs" />
+    <Compile Include="Drawing\ComIStreamWrapper.cs" />
+    <Compile Include="Drawing\ContentAlignment.cs" />
+    <Compile Include="Drawing\Design\UITypeEditor.cs" />
+    <Compile Include="Drawing\Drawing2D\CombineMode.cs" />
+    <Compile Include="Drawing\Drawing2D\CustomLineCap.cs" />
+    <Compile Include="Drawing\Drawing2D\DashStyle.cs" />
+    <Compile Include="Drawing\Drawing2D\FillMode.cs" />
+    <Compile Include="Drawing\Drawing2D\FlushIntention.cs" />
+    <Compile Include="Drawing\Drawing2D\GraphicsState.cs" />
+    <Compile Include="Drawing\Drawing2D\HatchBrush.cs" />
+    <Compile Include="Drawing\Drawing2D\HatchStyle.cs" />
+    <Compile Include="Drawing\Drawing2D\LinearGradientBrush.cs" />
+    <Compile Include="Drawing\Drawing2D\LinearGradientMode.cs" />
+    <Compile Include="Drawing\Drawing2D\Matrix.cs" />
+    <Compile Include="Drawing\Drawing2D\MatrixOrder.cs" />
+    <Compile Include="Drawing\Drawing2D\WrapMode.cs" />
+    <Compile Include="Drawing\Font.cs" />
+    <Compile Include="Drawing\FontConverter.cs" />
+    <Compile Include="Drawing\FontFamily.cs" />
+    <Compile Include="Drawing\FontStyle.cs" />
+    <Compile Include="Drawing\GDIPlus.cs" />
+    <Compile Include="Drawing\GdiplusStartupInput.cs" />
+    <Compile Include="Drawing\GdiplusStartupOutput.cs" />
+    <Compile Include="Drawing\GdipPropertyItem.cs" />
+    <Compile Include="Drawing\GetSysColorIndex.cs" />
+    <Compile Include="Drawing\Graphics.cs" />
+    <Compile Include="Drawing\GraphicsUnit.cs" />
+    <Compile Include="Drawing\Icon.cs" />
+    <Compile Include="Drawing\IconConverter.cs" />
+    <Compile Include="Drawing\IconInfo.cs" />
+    <Compile Include="Drawing\IDeviceContext.cs" />
+    <Compile Include="Drawing\IMacContext.cs" />
+    <Compile Include="Drawing\Image.cs" />
+    <Compile Include="Drawing\ImageAnimator.cs" />
+    <Compile Include="Drawing\ImageConverter.cs" />
+    <Compile Include="Drawing\ImageFormatConverter.cs" />
+    <Compile Include="Drawing\ImageType.cs" />
+    <Compile Include="Drawing\Imaging\BitmapData.cs" />
+    <Compile Include="Drawing\Imaging\ColorAdjustType.cs" />
+    <Compile Include="Drawing\Imaging\ColorMatrix.cs" />
+    <Compile Include="Drawing\Imaging\ColorMatrixFlag.cs" />
+    <Compile Include="Drawing\Imaging\ColorPalette.cs" />
+    <Compile Include="Drawing\Imaging\EncoderParameter.cs" />
+    <Compile Include="Drawing\Imaging\EncoderParameters.cs" />
+    <Compile Include="Drawing\Imaging\EncoderParameterValueType.cs" />
+    <Compile Include="Drawing\Imaging\FrameDimension.cs" />
+    <Compile Include="Drawing\Imaging\ImageAttributes.cs" />
+    <Compile Include="Drawing\Imaging\ImageCodecFlags.cs" />
+    <Compile Include="Drawing\Imaging\ImageCodecInfo.cs" />
+    <Compile Include="Drawing\Imaging\ImageCodecInfoPrivate.cs" />
+    <Compile Include="Drawing\Imaging\ImageFormat.cs" />
+    <Compile Include="Drawing\Imaging\ImageLockMode.cs" />
+    <Compile Include="Drawing\Imaging\Metafile.cs" />
+    <Compile Include="Drawing\Imaging\PixelFormat.cs" />
+    <Compile Include="Drawing\Imaging\PropertyItem.cs" />
+    <Compile Include="Drawing\KnownColor.cs" />
+    <Compile Include="Drawing\KnownColors.cs" />
+    <Compile Include="Drawing\KnownColorTable.cs" />
+    <Compile Include="Drawing\LOGFONT.cs" />
+    <Compile Include="Drawing\MacSupport.cs" />
+    <Compile Include="Drawing\Pen.cs" />
+    <Compile Include="Drawing\Pens.cs" />
+    <Compile Include="Drawing\Point.cs" />
+    <Compile Include="Drawing\PointConverter.cs" />
+    <Compile Include="Drawing\PointF.cs" />
+    <Compile Include="Drawing\QDRect.cs" />
+    <Compile Include="Drawing\Rectangle.cs" />
+    <Compile Include="Drawing\RectangleConverter.cs" />
+    <Compile Include="Drawing\RectangleF.cs" />
+    <Compile Include="Drawing\Region.cs" />
+    <Compile Include="Drawing\RotateFlipType.cs" />
+    <Compile Include="Drawing\SafeNativeMethods.cs" />
+    <Compile Include="Drawing\Size.cs" />
+    <Compile Include="Drawing\SizeConverter.cs" />
+    <Compile Include="Drawing\SizeF.cs" />
+    <Compile Include="Drawing\SizeFConverter.cs" />
+    <Compile Include="Drawing\SolidBrush.cs" />
+    <Compile Include="Drawing\Status.cs" />
+    <Compile Include="Drawing\StringAlignment.cs" />
+    <Compile Include="Drawing\StringFormat.cs" />
+    <Compile Include="Drawing\StringFormatFlags.cs" />
+    <Compile Include="Drawing\StringTrimming.cs" />
+    <Compile Include="Drawing\SystemBrushes.cs" />
+    <Compile Include="Drawing\SystemColors.cs" />
+    <Compile Include="Drawing\SystemFonts.cs" />
+    <Compile Include="Drawing\SystemIcons.cs" />
+    <Compile Include="Drawing\SystemPens.cs" />
+    <Compile Include="Drawing\TextureBrush.cs" />
+    <Compile Include="Drawing\Text\FontCollection.cs" />
+    <Compile Include="Drawing\Text\GenericFontFamilies.cs" />
+    <Compile Include="Drawing\Text\HotkeyPrefix.cs" />
+    <Compile Include="Drawing\Text\InstalledFontCollection.cs" />
+    <Compile Include="Drawing\Text\PrivateFontCollection.cs" />
+    <Compile Include="Drawing\ToolboxBitmapAttribute.cs" />
+    <Compile Include="Drawing\WorkerThread.cs" />
+    <Compile Include="Locale.cs" />
+    <Compile Include="MonoLimitationAttribute.cs" />
+    <Compile Include="MonoTODOAttribute.cs" />
+    <Compile Include="Numerics\Hashing\HashHelpers.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SR.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Error.ico" />
+    <EmbeddedResource Include="Information.ico" />
+    <EmbeddedResource Include="Mono.ico" />
+    <EmbeddedResource Include="Question.ico" />
+    <EmbeddedResource Include="Shield.ico" />
+    <EmbeddedResource Include="Warning.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

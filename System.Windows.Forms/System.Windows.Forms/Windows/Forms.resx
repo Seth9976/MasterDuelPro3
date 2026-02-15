@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="&amp;Copy" xml:space="preserve">
+    <value>&amp;Copy</value>
+  </data>
+  <data name="&amp;Delete" xml:space="preserve">
+    <value>&amp;Delete</value>
+  </data>
+  <data name="&amp;Paste" xml:space="preserve">
+    <value>&amp;Paste</value>
+  </data>
+  <data name="&amp;Undo" xml:space="preserve">
+    <value>&amp;Undo</value>
+  </data>
+  <data name="&lt;unknown method&gt;" xml:space="preserve">
+    <value>&lt;unknown method&gt;</value>
+  </data>
+  <data name="Abort" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="Add To Custom Colors" xml:space="preserve">
+    <value>Add To Custom Colors</value>
+  </data>
+  <data name="Add new" xml:space="preserve">
+    <value>Add new</value>
+  </data>
+  <data name="Alphabetic" xml:space="preserve">
+    <value>Alphabetic</value>
+  </data>
+  <data name="Base Colors" xml:space="preserve">
+    <value>Base Colors</value>
+  </data>
+  <data name="Blue" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="Bri" xml:space="preserve">
+    <value>Bri</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Categorized" xml:space="preserve">
+    <value>Categorized</value>
+  </data>
+  <data name="Color" xml:space="preserve">
+    <value>Color</value>
+  </data>
+  <data name="Cu&amp;t" xml:space="preserve">
+    <value>Cu&amp;t</value>
+  </data>
+  <data name="Current position" xml:space="preserve">
+    <value>Current position</value>
+  </data>
+  <data name="Cut" xml:space="preserve">
+    <value>Cut</value>
+  </data>
+  <data name="Define Custom Colors &gt;&gt;" xml:space="preserve">
+    <value>Define Custom Colors &gt;&gt;</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Enum argument value '{0}' is not valid for AutoCompleteMode" xml:space="preserve">
+    <value>Enum argument value '{0}' is not valid for AutoCompleteMode</value>
+  </data>
+  <data name="Enum argument value '{0}' is not valid for AutoCompleteSource" xml:space="preserve">
+    <value>Enum argument value '{0}' is not valid for AutoCompleteSource</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="Green" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="Hue" xml:space="preserve">
+    <value>Hue</value>
+  </data>
+  <data name="Ignore" xml:space="preserve">
+    <value>Ignore</value>
+  </data>
+  <data name="Move first" xml:space="preserve">
+    <value>Move first</value>
+  </data>
+  <data name="Move last" xml:space="preserve">
+    <value>Move last</value>
+  </data>
+  <data name="Move next" xml:space="preserve">
+    <value>Move next</value>
+  </data>
+  <data name="Move previous" xml:space="preserve">
+    <value>Move previous</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="Paste" xml:space="preserve">
+    <value>Paste</value>
+  </data>
+  <data name="Red" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="Retry" xml:space="preserve">
+    <value>Retry</value>
+  </data>
+  <data name="Sat" xml:space="preserve">
+    <value>Sat</value>
+  </data>
+  <data name="Select &amp;All" xml:space="preserve">
+    <value>Select &amp;All</value>
+  </data>
+  <data name="Total number of items" xml:space="preserve">
+    <value>Total number of items</value>
+  </data>
+  <data name="Typing" xml:space="preserve">
+    <value>Typing</value>
+  </data>
+  <data name="User Colors" xml:space="preserve">
+    <value>User Colors</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="at" xml:space="preserve">
+    <value>at</value>
+  </data>
+  <data name="of {0}" xml:space="preserve">
+    <value>of {0}</value>
+  </data>
+</root>

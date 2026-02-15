@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F80A493D-9916-4FC5-AA7B-D24D4B4398D2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System.Data</RootNamespace>
+    <AssemblyName>System.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\Managed\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>..\..\..\Managed\System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\Managed\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>..\..\..\Managed\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>..\..\..\Managed\System.Numerics.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>..\..\..\Managed\System.Transactions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>..\..\..\Managed\System.Xml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SR.cs" />
+    <Compile Include="System\Data\AcceptRejectRule.cs" />
+    <Compile Include="System\Data\Aggregate.cs" />
+    <Compile Include="System\Data\AggregateNode.cs" />
+    <Compile Include="System\Data\AggregateType.cs" />
+    <Compile Include="System\Data\AutoIncrementBigInteger.cs" />
+    <Compile Include="System\Data\AutoIncrementInt64.cs" />
+    <Compile Include="System\Data\AutoIncrementValue.cs" />
+    <Compile Include="System\Data\BinaryNode.cs" />
+    <Compile Include="System\Data\ChildForeignKeyConstraintEnumerator.cs" />
+    <Compile Include="System\Data\ColumnTypeConverter.cs" />
+    <Compile Include="System\Data\CommandBehavior.cs" />
+    <Compile Include="System\Data\CommandType.cs" />
+    <Compile Include="System\Data\Common\ADP.cs" />
+    <Compile Include="System\Data\Common\BigIntegerStorage.cs" />
+    <Compile Include="System\Data\Common\BooleanStorage.cs" />
+    <Compile Include="System\Data\Common\ByteStorage.cs" />
+    <Compile Include="System\Data\Common\CatalogLocation.cs" />
+    <Compile Include="System\Data\Common\CharStorage.cs" />
+    <Compile Include="System\Data\Common\DataAdapter.cs" />
+    <Compile Include="System\Data\Common\DataColumnMapping.cs" />
+    <Compile Include="System\Data\Common\DataColumnMappingCollection.cs" />
+    <Compile Include="System\Data\Common\DataRecordInternal.cs" />
+    <Compile Include="System\Data\Common\DataStorage.cs" />
+    <Compile Include="System\Data\Common\DataTableMapping.cs" />
+    <Compile Include="System\Data\Common\DataTableMappingCollection.cs" />
+    <Compile Include="System\Data\Common\DateTimeOffsetStorage.cs" />
+    <Compile Include="System\Data\Common\DateTimeStorage.cs" />
+    <Compile Include="System\Data\Common\DbCommand.cs" />
+    <Compile Include="System\Data\Common\DbCommandBuilder.cs" />
+    <Compile Include="System\Data\Common\DbConnection.cs" />
+    <Compile Include="System\Data\Common\DbDataAdapter.cs" />
+    <Compile Include="System\Data\Common\DbDataReader.cs" />
+    <Compile Include="System\Data\Common\DbDataRecord.cs" />
+    <Compile Include="System\Data\Common\DbEnumerator.cs" />
+    <Compile Include="System\Data\Common\DbException.cs" />
+    <Compile Include="System\Data\Common\DbMetaDataCollectionNames.cs" />
+    <Compile Include="System\Data\Common\DbMetaDataColumnNames.cs" />
+    <Compile Include="System\Data\Common\DbParameter.cs" />
+    <Compile Include="System\Data\Common\DbParameterCollection.cs" />
+    <Compile Include="System\Data\Common\DbProviderFactory.cs" />
+    <Compile Include="System\Data\Common\DbProviderSpecificTypePropertyAttribute.cs" />
+    <Compile Include="System\Data\Common\DbSchemaRow.cs" />
+    <Compile Include="System\Data\Common\DbSchemaTable.cs" />
+    <Compile Include="System\Data\Common\DbTransaction.cs" />
+    <Compile Include="System\Data\Common\DecimalStorage.cs" />
+    <Compile Include="System\Data\Common\DoubleStorage.cs" />
+    <Compile Include="System\Data\Common\Int16Storage.cs" />
+    <Compile Include="System\Data\Common\Int32Storage.cs" />
+    <Compile Include="System\Data\Common\Int64Storage.cs" />
+    <Compile Include="System\Data\Common\ObjectStorage.cs" />
+    <Compile Include="System\Data\Common\RowUpdatingEventArgs.cs" />
+    <Compile Include="System\Data\Common\SByteStorage.cs" />
+    <Compile Include="System\Data\Common\SchemaInfo.cs" />
+    <Compile Include="System\Data\Common\SchemaTableColumn.cs" />
+    <Compile Include="System\Data\Common\SchemaTableOptionalColumn.cs" />
+    <Compile Include="System\Data\Common\SingleStorage.cs" />
+    <Compile Include="System\Data\Common\SqlBinaryStorage.cs" />
+    <Compile Include="System\Data\Common\SqlBooleanStorage.cs" />
+    <Compile Include="System\Data\Common\SqlBytesStorage.cs" />
+    <Compile Include="System\Data\Common\SqlByteStorage.cs" />
+    <Compile Include="System\Data\Common\SqlCharsStorage.cs" />
+    <Compile Include="System\Data\Common\SqlConvert.cs" />
+    <Compile Include="System\Data\Common\SqlDateTimeStorage.cs" />
+    <Compile Include="System\Data\Common\SqlDecimalStorage.cs" />
+    <Compile Include="System\Data\Common\SqlDoubleStorage.cs" />
+    <Compile Include="System\Data\Common\SqlGuidStorage.cs" />
+    <Compile Include="System\Data\Common\SqlInt16Storage.cs" />
+    <Compile Include="System\Data\Common\SqlInt32Storage.cs" />
+    <Compile Include="System\Data\Common\SqlInt64Storage.cs" />
+    <Compile Include="System\Data\Common\SqlMoneyStorage.cs" />
+    <Compile Include="System\Data\Common\SqlSingleStorage.cs" />
+    <Compile Include="System\Data\Common\SqlStringStorage.cs" />
+    <Compile Include="System\Data\Common\SqlUdtStorage.cs" />
+    <Compile Include="System\Data\Common\StorageType.cs" />
+    <Compile Include="System\Data\Common\StringStorage.cs" />
+    <Compile Include="System\Data\Common\TimeSpanStorage.cs" />
+    <Compile Include="System\Data\Common\UInt16Storage.cs" />
+    <Compile Include="System\Data\Common\UInt32Storage.cs" />
+    <Compile Include="System\Data\Common\UInt64Storage.cs" />
+    <Compile Include="System\Data\ConflictOption.cs" />
+    <Compile Include="System\Data\ConnectionState.cs" />
+    <Compile Include="System\Data\ConstNode.cs" />
+    <Compile Include="System\Data\Constraint.cs" />
+    <Compile Include="System\Data\ConstraintCollection.cs" />
+    <Compile Include="System\Data\ConstraintConverter.cs" />
+    <Compile Include="System\Data\ConstraintEnumerator.cs" />
+    <Compile Include="System\Data\ConstraintException.cs" />
+    <Compile Include="System\Data\ConstraintTable.cs" />
+    <Compile Include="System\Data\DataColumn.cs" />
+    <Compile Include="System\Data\DataColumnChangeEventArgs.cs" />
+    <Compile Include="System\Data\DataColumnChangeEventHandler.cs" />
+    <Compile Include="System\Data\DataColumnCollection.cs" />
+    <Compile Include="System\Data\DataColumnPropertyDescriptor.cs" />
+    <Compile Include="System\Data\DataCommonEventSource.cs" />
+    <Compile Include="System\Data\DataError.cs" />
+    <Compile Include="System\Data\DataException.cs" />
+    <Compile Include="System\Data\DataExpression.cs" />
+    <Compile Include="System\Data\DataKey.cs" />
+    <Compile Include="System\Data\DataRelation.cs" />
+    <Compile Include="System\Data\DataRelationCollection.cs" />
+    <Compile Include="System\Data\DataRelationPropertyDescriptor.cs" />
+    <Compile Include="System\Data\DataRow.cs" />
+    <Compile Include="System\Data\DataRowAction.cs" />
+    <Compile Include="System\Data\DataRowBuilder.cs" />
+    <Compile Include="System\Data\DataRowChangeEventArgs.cs" />
+    <Compile Include="System\Data\DataRowChangeEventHandler.cs" />
+    <Compile Include="System\Data\DataRowCollection.cs" />
+    <Compile Include="System\Data\DataRowCreatedEventHandler.cs" />
+    <Compile Include="System\Data\DataRowState.cs" />
+    <Compile Include="System\Data\DataRowVersion.cs" />
+    <Compile Include="System\Data\DataRowView.cs" />
+    <Compile Include="System\Data\DataSet.cs" />
+    <Compile Include="System\Data\DataSetClearEventhandler.cs" />
+    <Compile Include="System\Data\DataSetDateTime.cs" />
+    <Compile Include="System\Data\DataTable.cs" />
+    <Compile Include="System\Data\DataTableClearEventArgs.cs" />
+    <Compile Include="System\Data\DataTableClearEventHandler.cs" />
+    <Compile Include="System\Data\DataTableCollection.cs" />
+    <Compile Include="System\Data\DataTableNewRowEventArgs.cs" />
+    <Compile Include="System\Data\DataTableNewRowEventHandler.cs" />
+    <Compile Include="System\Data\DataTablePropertyDescriptor.cs" />
+    <Compile Include="System\Data\DataTableTypeConverter.cs" />
+    <Compile Include="System\Data\DataTextReader.cs" />
+    <Compile Include="System\Data\DataTextWriter.cs" />
+    <Compile Include="System\Data\DataView.cs" />
+    <Compile Include="System\Data\DataViewListener.cs" />
+    <Compile Include="System\Data\DataViewManager.cs" />
+    <Compile Include="System\Data\DataViewManagerListItemTypeDescriptor.cs" />
+    <Compile Include="System\Data\DataViewRowState.cs" />
+    <Compile Include="System\Data\DataViewSetting.cs" />
+    <Compile Include="System\Data\DataViewSettingCollection.cs" />
+    <Compile Include="System\Data\DbType.cs" />
+    <Compile Include="System\Data\DefaultValueTypeConverter.cs" />
+    <Compile Include="System\Data\DeletedRowInaccessibleException.cs" />
+    <Compile Include="System\Data\DuplicateNameException.cs" />
+    <Compile Include="System\Data\EvaluateException.cs" />
+    <Compile Include="System\Data\ExceptionBuilder.cs" />
+    <Compile Include="System\Data\ExpressionNode.cs" />
+    <Compile Include="System\Data\ExpressionParser.cs" />
+    <Compile Include="System\Data\ExprException.cs" />
+    <Compile Include="System\Data\ForeignKeyConstraint.cs" />
+    <Compile Include="System\Data\ForeignKeyConstraintEnumerator.cs" />
+    <Compile Include="System\Data\Function.cs" />
+    <Compile Include="System\Data\FunctionId.cs" />
+    <Compile Include="System\Data\FunctionNode.cs" />
+    <Compile Include="System\Data\IColumnMappingCollection.cs" />
+    <Compile Include="System\Data\IDataReader.cs" />
+    <Compile Include="System\Data\IDataRecord.cs" />
+    <Compile Include="System\Data\IDbCommand.cs" />
+    <Compile Include="System\Data\IDbDataAdapter.cs" />
+    <Compile Include="System\Data\IFilter.cs" />
+    <Compile Include="System\Data\Index.cs" />
+    <Compile Include="System\Data\IndexField.cs" />
+    <Compile Include="System\Data\InRowChangingEventException.cs" />
+    <Compile Include="System\Data\InternalDataCollectionBase.cs" />
+    <Compile Include="System\Data\InvalidConstraintException.cs" />
+    <Compile Include="System\Data\InvalidExpressionException.cs" />
+    <Compile Include="System\Data\IsolationLevel.cs" />
+    <Compile Include="System\Data\LikeNode.cs" />
+    <Compile Include="System\Data\Listeners.cs" />
+    <Compile Include="System\Data\LookupNode.cs" />
+    <Compile Include="System\Data\MappingType.cs" />
+    <Compile Include="System\Data\MergeFailedEventArgs.cs" />
+    <Compile Include="System\Data\MergeFailedEventHandler.cs" />
+    <Compile Include="System\Data\Merger.cs" />
+    <Compile Include="System\Data\MissingMappingAction.cs" />
+    <Compile Include="System\Data\MissingSchemaAction.cs" />
+    <Compile Include="System\Data\NameNode.cs" />
+    <Compile Include="System\Data\NewDiffgramGen.cs" />
+    <Compile Include="System\Data\Nodes.cs" />
+    <Compile Include="System\Data\NoNullAllowedException.cs" />
+    <Compile Include="System\Data\OperatorInfo.cs" />
+    <Compile Include="System\Data\Operators.cs" />
+    <Compile Include="System\Data\ParameterDirection.cs" />
+    <Compile Include="System\Data\ParentForeignKeyConstraintEnumerator.cs" />
+    <Compile Include="System\Data\PrimaryKeyTypeConverter.cs" />
+    <Compile Include="System\Data\PropertyCollection.cs" />
+    <Compile Include="System\Data\ProviderBase\BasicFieldNameLookup.cs" />
+    <Compile Include="System\Data\ProviderBase\FieldNameLookup.cs" />
+    <Compile Include="System\Data\Range.cs" />
+    <Compile Include="System\Data\RBTree.cs" />
+    <Compile Include="System\Data\RBTreeError.cs" />
+    <Compile Include="System\Data\ReadOnlyException.cs" />
+    <Compile Include="System\Data\RecordManager.cs" />
+    <Compile Include="System\Data\RelatedView.cs" />
+    <Compile Include="System\Data\RelationshipConverter.cs" />
+    <Compile Include="System\Data\RowNotInTableException.cs" />
+    <Compile Include="System\Data\Rule.cs" />
+    <Compile Include="System\Data\SchemaFormat.cs" />
+    <Compile Include="System\Data\SchemaSerializationMode.cs" />
+    <Compile Include="System\Data\Select.cs" />
+    <Compile Include="System\Data\SerializationFormat.cs" />
+    <Compile Include="System\Data\SimpleType.cs" />
+    <Compile Include="System\Data\SqlTypes\EComparison.cs" />
+    <Compile Include="System\Data\SqlTypes\INullable.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlBinary.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlBoolean.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlByte.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlBytes.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlBytesCharsState.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlChars.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlCompareOptions.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlDateTime.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlDecimal.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlDouble.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlGuid.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlInt16.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlInt32.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlInt64.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlMoney.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlNullValueException.cs" />
+    <Compile Include="System\Data\SqlTypes\SQLResource.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlSingle.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlStreamChars.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlString.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlTruncateException.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlTypeException.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlXml.cs" />
+    <Compile Include="System\Data\SqlTypes\SqlXmlStreamWrapper.cs" />
+    <Compile Include="System\Data\StateChangeEventArgs.cs" />
+    <Compile Include="System\Data\StateChangeEventHandler.cs" />
+    <Compile Include="System\Data\StatementType.cs" />
+    <Compile Include="System\Data\SyntaxErrorException.cs" />
+    <Compile Include="System\Data\Tokens.cs" />
+    <Compile Include="System\Data\TreeAccessMethod.cs" />
+    <Compile Include="System\Data\TypeLimiter.cs" />
+    <Compile Include="System\Data\UnaryNode.cs" />
+    <Compile Include="System\Data\UniqueConstraint.cs" />
+    <Compile Include="System\Data\UpdateRowSource.cs" />
+    <Compile Include="System\Data\UpdateStatus.cs" />
+    <Compile Include="System\Data\ValueType.cs" />
+    <Compile Include="System\Data\VersionNotFoundException.cs" />
+    <Compile Include="System\Data\XDRSchema.cs" />
+    <Compile Include="System\Data\XmlDataLoader.cs" />
+    <Compile Include="System\Data\XmlDataTreeWriter.cs" />
+    <Compile Include="System\Data\XMLDiffLoader.cs" />
+    <Compile Include="System\Data\XmlIgnoreNamespaceReader.cs" />
+    <Compile Include="System\Data\XmlReadMode.cs" />
+    <Compile Include="System\Data\XMLSchema.cs" />
+    <Compile Include="System\Data\XmlToDatasetMap.cs" />
+    <Compile Include="System\Data\XmlTreeGen.cs" />
+    <Compile Include="System\Data\XmlWriteMode.cs" />
+    <Compile Include="System\Data\XSDSchema.cs" />
+    <Compile Include="System\Data\ZeroOpNode.cs" />
+    <Compile Include="System\LocalAppContext.cs" />
+    <Compile Include="System\LocalAppContextSwitches.cs" />
+    <Compile Include="System\MonoTODOAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableContextAttribute.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="System\Data\SqlClient\SqlMetaData.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

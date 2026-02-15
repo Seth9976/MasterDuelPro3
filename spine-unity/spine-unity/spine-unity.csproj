@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AA55BF38-A121-4871-B59D-E08C0546AD68}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Spine</RootNamespace>
+    <AssemblyName>spine-unity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="spine-csharp">
+      <HintPath>..\..\..\Managed\spine-csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\Managed\System.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule">
+      <HintPath>..\..\..\Managed\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\Managed\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\Managed\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BoneMatrix.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpineSkeletonExtensions.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="Unity\ActivateBasedOnFlipDirection.cs" />
+    <Compile Include="Unity\AnimationReferenceAsset.cs" />
+    <Compile Include="Unity\AnimationTools\TimelineExtensions.cs" />
+    <Compile Include="Unity\AtlasAssetBase.cs" />
+    <Compile Include="Unity\AttachmentTools\AtlasUtilities.cs" />
+    <Compile Include="Unity\AttachmentTools\AttachmentCloneExtensions.cs" />
+    <Compile Include="Unity\AttachmentTools\AttachmentRegionExtensions.cs" />
+    <Compile Include="Unity\BlendModeMaterials.cs" />
+    <Compile Include="Unity\BlendModeMaterialsAsset.cs" />
+    <Compile Include="Unity\BoneFollower.cs" />
+    <Compile Include="Unity\BoneFollowerGraphic.cs" />
+    <Compile Include="Unity\BoundingBoxFollower.cs" />
+    <Compile Include="Unity\BoundingBoxFollowerGraphic.cs" />
+    <Compile Include="Unity\DoubleBuffered.cs" />
+    <Compile Include="Unity\EventDataReferenceAsset.cs" />
+    <Compile Include="Unity\FollowLocationRigidbody.cs" />
+    <Compile Include="Unity\FollowLocationRigidbody2D.cs" />
+    <Compile Include="Unity\FollowSkeletonUtilityRootRotation.cs" />
+    <Compile Include="Unity\IAnimationStateComponent.cs" />
+    <Compile Include="Unity\IHasSkeletonComponent.cs" />
+    <Compile Include="Unity\IHasSkeletonDataAsset.cs" />
+    <Compile Include="Unity\IHasSkeletonRenderer.cs" />
+    <Compile Include="Unity\ISkeletonAnimation.cs" />
+    <Compile Include="Unity\ISkeletonAnimationDelegate.cs" />
+    <Compile Include="Unity\ISkeletonComponent.cs" />
+    <Compile Include="Unity\ISpineComponent.cs" />
+    <Compile Include="Unity\ISpineComponentExtensions.cs" />
+    <Compile Include="Unity\MaterialsTextureLoader.cs" />
+    <Compile Include="Unity\MathUtilities.cs" />
+    <Compile Include="Unity\MeshGenerator.cs" />
+    <Compile Include="Unity\MeshGeneratorBuffers.cs" />
+    <Compile Include="Unity\MeshGeneratorDelegate.cs" />
+    <Compile Include="Unity\MeshRendererBuffers.cs" />
+    <Compile Include="Unity\NoOpTextureLoader.cs" />
+    <Compile Include="Unity\OnDemandTextureLoader.cs" />
+    <Compile Include="Unity\PointFollower.cs" />
+    <Compile Include="Unity\RegionlessAttachmentLoader.cs" />
+    <Compile Include="Unity\SettingsTriState.cs" />
+    <Compile Include="Unity\SkeletonAnimation.cs" />
+    <Compile Include="Unity\SkeletonDataAsset.cs" />
+    <Compile Include="Unity\SkeletonDataCompatibility.cs" />
+    <Compile Include="Unity\SkeletonDataModifierAsset.cs" />
+    <Compile Include="Unity\SkeletonExtensions.cs" />
+    <Compile Include="Unity\SkeletonGraphic.cs" />
+    <Compile Include="Unity\SkeletonGraphicCustomMaterials.cs" />
+    <Compile Include="Unity\SkeletonMecanim.cs" />
+    <Compile Include="Unity\SkeletonMecanimRootMotion.cs" />
+    <Compile Include="Unity\SkeletonPartsRenderer.cs" />
+    <Compile Include="Unity\SkeletonRenderer.cs" />
+    <Compile Include="Unity\SkeletonRendererCustomMaterials.cs" />
+    <Compile Include="Unity\SkeletonRendererInstruction.cs" />
+    <Compile Include="Unity\SkeletonRenderSeparator.cs" />
+    <Compile Include="Unity\SkeletonRootMotion.cs" />
+    <Compile Include="Unity\SkeletonRootMotionBase.cs" />
+    <Compile Include="Unity\SkeletonSubmeshGraphic.cs" />
+    <Compile Include="Unity\SkeletonUtility.cs" />
+    <Compile Include="Unity\SkeletonUtilityBone.cs" />
+    <Compile Include="Unity\SkeletonUtilityConstraint.cs" />
+    <Compile Include="Unity\SpineAnimation.cs" />
+    <Compile Include="Unity\SpineAtlasAsset.cs" />
+    <Compile Include="Unity\SpineAtlasRegion.cs" />
+    <Compile Include="Unity\SpineAttachment.cs" />
+    <Compile Include="Unity\SpineAttributeBase.cs" />
+    <Compile Include="Unity\SpineBone.cs" />
+    <Compile Include="Unity\SpineEvent.cs" />
+    <Compile Include="Unity\SpineIkConstraint.cs" />
+    <Compile Include="Unity\SpineMesh.cs" />
+    <Compile Include="Unity\SpinePathConstraint.cs" />
+    <Compile Include="Unity\SpineSkin.cs" />
+    <Compile Include="Unity\SpineSlot.cs" />
+    <Compile Include="Unity\SpineSpriteAtlasAsset.cs" />
+    <Compile Include="Unity\SpineTransformConstraint.cs" />
+    <Compile Include="Unity\SubmeshInstruction.cs" />
+    <Compile Include="Unity\UpdateBonesDelegate.cs" />
+    <Compile Include="Unity\UpdateMode.cs" />
+    <Compile Include="Unity\UpdateTiming.cs" />
+    <Compile Include="Unity\WaitForSpineAnimation.cs" />
+    <Compile Include="Unity\WaitForSpineAnimationComplete.cs" />
+    <Compile Include="Unity\WaitForSpineAnimationEnd.cs" />
+    <Compile Include="Unity\WaitForSpineEvent.cs" />
+    <Compile Include="Unity\WaitForSpineTrackEntryEnd.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

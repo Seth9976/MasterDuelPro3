@@ -1,0 +1,185 @@
+﻿using System;
+
+namespace System.Threading
+{
+	/// <summary>Provides lazy initialization routines.</summary>
+	// Token: 0x0200021B RID: 539
+	public static class LazyInitializer
+	{
+		/// <summary>Initializes a target reference type with the type's default constructor if it hasn't already been initialized.</summary>
+		/// <returns>The initialized reference of type <paramref name="T" />.</returns>
+		/// <param name="target">A reference of type <paramref name="T" /> to initialize if it has not already been initialized.</param>
+		/// <typeparam name="T">The type of the reference to be initialized.</typeparam>
+		/// <exception cref="T:System.MemberAccessException">Permissions to access the constructor of type <paramref name="T" /> were missing.</exception>
+		/// <exception cref="T:System.MissingMemberException">Type <paramref name="T" /> does not have a default constructor.</exception>
+		// Token: 0x06001460 RID: 5216 RVA: 0x0005342E File Offset: 0x0005162E
+		public static T EnsureInitialized<T>(ref T target) where T : class
+		{
+			T t;
+			if ((t = Volatile.Read<T>(ref target)) == null)
+			{
+				t = LazyInitializer.EnsureInitializedCore<T>(ref target);
+			}
+			return t;
+		}
+
+		// Token: 0x06001461 RID: 5217 RVA: 0x00053448 File Offset: 0x00051648
+		private static T EnsureInitializedCore<T>(ref T target) where T : class
+		{
+			try
+			{
+				Interlocked.CompareExchange<T>(ref target, Activator.CreateInstance<T>(), default(T));
+			}
+			catch (MissingMethodException)
+			{
+				throw new MissingMemberException("The lazily-initialized type does not have a public, parameterless constructor.");
+			}
+			return target;
+		}
+
+		/// <summary>Initializes a target reference type by using a specified function if it hasn't already been initialized.</summary>
+		/// <returns>The initialized value of type <paramref name="T" />.</returns>
+		/// <param name="target">The reference of type <paramref name="T" /> to initialize if it hasn't already been initialized.</param>
+		/// <param name="valueFactory">The function that is called to initialize the reference.</param>
+		/// <typeparam name="T">The reference type of the reference to be initialized.</typeparam>
+		/// <exception cref="T:System.MissingMemberException">Type <paramref name="T" /> does not have a default constructor.</exception>
+		/// <exception cref="T:System.InvalidOperationException">
+		///   <paramref name="valueFactory" /> returned null (Nothing in Visual Basic).</exception>
+		// Token: 0x06001462 RID: 5218 RVA: 0x00053490 File Offset: 0x00051690
+		public static T EnsureInitialized<T>(ref T target, Func<T> valueFactory) where T : class
+		{
+			T t;
+			if ((t = Volatile.Read<T>(ref target)) == null)
+			{
+				t = LazyInitializer.EnsureInitializedCore<T>(ref target, valueFactory);
+			}
+			return t;
+		}
+
+		// Token: 0x06001463 RID: 5219 RVA: 0x000534A8 File Offset: 0x000516A8
+		private static T EnsureInitializedCore<T>(ref T target, Func<T> valueFactory) where T : class
+		{
+			T t = valueFactory();
+			if (t == null)
+			{
+				throw new InvalidOperationException("ValueFactory returned null.");
+			}
+			Interlocked.CompareExchange<T>(ref target, t, default(T));
+			return target;
+		}
+
+		/// <summary>Initializes a target reference or value type with its default constructor if it hasn't already been initialized.</summary>
+		/// <returns>The initialized value of type <paramref name="T" />.</returns>
+		/// <param name="target">A reference or value of type <paramref name="T" /> to initialize if it hasn't already been initialized.</param>
+		/// <param name="initialized">A reference to a Boolean value that determines whether the target has already been initialized.</param>
+		/// <param name="syncLock">A reference to an object used as the mutually exclusive lock for initializing <paramref name="target" />. If <paramref name="syncLock" /> is null, a new object will be instantiated.</param>
+		/// <typeparam name="T">The type of the reference to be initialized.</typeparam>
+		/// <exception cref="T:System.MemberAccessException">Permissions to access the constructor of type <paramref name="T" /> were missing.</exception>
+		/// <exception cref="T:System.MissingMemberException">Type <paramref name="T" /> does not have a default constructor.</exception>
+		// Token: 0x06001464 RID: 5220 RVA: 0x000534E6 File Offset: 0x000516E6
+		public static T EnsureInitialized<T>(ref T target, ref bool initialized, ref object syncLock)
+		{
+			if (Volatile.Read(ref initialized))
+			{
+				return target;
+			}
+			return LazyInitializer.EnsureInitializedCore<T>(ref target, ref initialized, ref syncLock);
+		}
+
+		// Token: 0x06001465 RID: 5221 RVA: 0x00053500 File Offset: 0x00051700
+		private static T EnsureInitializedCore<T>(ref T target, ref bool initialized, ref object syncLock)
+		{
+			object obj = LazyInitializer.EnsureLockInitialized(ref syncLock);
+			lock (obj)
+			{
+				if (!Volatile.Read(ref initialized))
+				{
+					try
+					{
+						target = Activator.CreateInstance<T>();
+					}
+					catch (MissingMethodException)
+					{
+						throw new MissingMemberException("The lazily-initialized type does not have a public, parameterless constructor.");
+					}
+					Volatile.Write(ref initialized, true);
+				}
+			}
+			return target;
+		}
+
+		/// <summary>Initializes a target reference or value type by using a specified function if it hasn't already been initialized.</summary>
+		/// <returns>The initialized value of type <paramref name="T" />.</returns>
+		/// <param name="target">A reference or value of type <paramref name="T" /> to initialize if it hasn't already been initialized.</param>
+		/// <param name="initialized">A reference to a Boolean value that determines whether the target has already been initialized.</param>
+		/// <param name="syncLock">A reference to an object used as the mutually exclusive lock for initializing <paramref name="target" />. If <paramref name="syncLock" /> is null, a new object will be instantiated.</param>
+		/// <param name="valueFactory">The function that is called to initialize the reference or value.</param>
+		/// <typeparam name="T">The type of the reference to be initialized.</typeparam>
+		/// <exception cref="T:System.MemberAccessException">Permissions to access the constructor of type <paramref name="T" /> were missing.</exception>
+		/// <exception cref="T:System.MissingMemberException">Type <paramref name="T" /> does not have a default constructor.</exception>
+		// Token: 0x06001466 RID: 5222 RVA: 0x00053574 File Offset: 0x00051774
+		public static T EnsureInitialized<T>(ref T target, ref bool initialized, ref object syncLock, Func<T> valueFactory)
+		{
+			if (Volatile.Read(ref initialized))
+			{
+				return target;
+			}
+			return LazyInitializer.EnsureInitializedCore<T>(ref target, ref initialized, ref syncLock, valueFactory);
+		}
+
+		// Token: 0x06001467 RID: 5223 RVA: 0x00053590 File Offset: 0x00051790
+		private static T EnsureInitializedCore<T>(ref T target, ref bool initialized, ref object syncLock, Func<T> valueFactory)
+		{
+			object obj = LazyInitializer.EnsureLockInitialized(ref syncLock);
+			lock (obj)
+			{
+				if (!Volatile.Read(ref initialized))
+				{
+					target = valueFactory();
+					Volatile.Write(ref initialized, true);
+				}
+			}
+			return target;
+		}
+
+		// Token: 0x06001468 RID: 5224 RVA: 0x000535EC File Offset: 0x000517EC
+		public static T EnsureInitialized<T>(ref T target, ref object syncLock, Func<T> valueFactory) where T : class
+		{
+			T t;
+			if ((t = Volatile.Read<T>(ref target)) == null)
+			{
+				t = LazyInitializer.EnsureInitializedCore<T>(ref target, ref syncLock, valueFactory);
+			}
+			return t;
+		}
+
+		// Token: 0x06001469 RID: 5225 RVA: 0x00053608 File Offset: 0x00051808
+		private static T EnsureInitializedCore<T>(ref T target, ref object syncLock, Func<T> valueFactory) where T : class
+		{
+			object obj = LazyInitializer.EnsureLockInitialized(ref syncLock);
+			lock (obj)
+			{
+				if (Volatile.Read<T>(ref target) == null)
+				{
+					Volatile.Write<T>(ref target, valueFactory());
+					if (target == null)
+					{
+						throw new InvalidOperationException("ValueFactory returned null.");
+					}
+				}
+			}
+			return target;
+		}
+
+		// Token: 0x0600146A RID: 5226 RVA: 0x0005367C File Offset: 0x0005187C
+		private static object EnsureLockInitialized(ref object syncLock)
+		{
+			object obj;
+			if ((obj = syncLock) == null)
+			{
+				obj = Interlocked.CompareExchange(ref syncLock, new object(), null) ?? syncLock;
+			}
+			return obj;
+		}
+	}
+}

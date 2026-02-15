@@ -1,0 +1,29 @@
+﻿using System;
+
+namespace YgomGame.Duel
+{
+	// Token: 0x02000E01 RID: 3585
+	public class EffectTaskMaterialSet : EffectTask
+	{
+		// Token: 0x060067EF RID: 26607 RVA: 0x0000216A File Offset: 0x0000036A
+		public static EffectTask Create(RunEffectWorker worker, int param1, int param2, int param3)
+		{
+			return null;
+		}
+
+		// Token: 0x060067F0 RID: 26608 RVA: 0x000F5CE2 File Offset: 0x000F3EE2
+		public EffectTaskMaterialSet(RunEffectWorker worker, int param1, int param2, int param3)
+			: base(null)
+		{
+		}
+
+		// Token: 0x060067F1 RID: 26609 RVA: 0x000029CC File Offset: 0x00000BCC
+		public override bool Update()
+		{
+			return false;
+		}
+
+		// Token: 0x0400A2E8 RID: 41704
+		private bool finished;
+	}
+}

@@ -1,0 +1,43 @@
+﻿using System;
+
+namespace YgomGame.TextIDs
+{
+	// Token: 0x02000857 RID: 2135
+	public enum IDS_GEMHISTORY
+	{
+		// Token: 0x0400490A RID: 18698
+		TITLE,
+		// Token: 0x0400490B RID: 18699
+		INFO1,
+		// Token: 0x0400490C RID: 18700
+		INFO2,
+		// Token: 0x0400490D RID: 18701
+		GEM_DATE_EXPIRE_PAYED,
+		// Token: 0x0400490E RID: 18702
+		GEM_DATE_EXPIRE_FREE,
+		// Token: 0x0400490F RID: 18703
+		OWN_FREE,
+		// Token: 0x04004910 RID: 18704
+		OWN_PAYED,
+		// Token: 0x04004911 RID: 18705
+		DATE_GET,
+		// Token: 0x04004912 RID: 18706
+		DATE_PAYED,
+		// Token: 0x04004913 RID: 18707
+		DATE_CONSUME,
+		// Token: 0x04004914 RID: 18708
+		DATE_EXPIRED,
+		// Token: 0x04004915 RID: 18709
+		DATE_EXPIRE,
+		// Token: 0x04004916 RID: 18710
+		PAYED,
+		// Token: 0x04004917 RID: 18711
+		FREE,
+		// Token: 0x04004918 RID: 18712
+		MAX,
+		// Token: 0x04004919 RID: 18713
+		NOT_USED,
+		// Token: 0x0400491A RID: 18714
+		NONE
+	}
+}

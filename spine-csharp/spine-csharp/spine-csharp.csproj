@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{157680E0-5EFF-4B08-9620-443FF35BA1AD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>spine-csharp</RootNamespace>
+    <AssemblyName>spine-csharp</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\Managed\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>..\..\..\Managed\System.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SharpJson\JsonDecoder.cs" />
+    <Compile Include="SharpJson\Lexer.cs" />
+    <Compile Include="Spine\AlphaTimeline.cs" />
+    <Compile Include="Spine\Animation.cs" />
+    <Compile Include="Spine\AnimationState.cs" />
+    <Compile Include="Spine\AnimationStateData.cs" />
+    <Compile Include="Spine\Atlas.cs" />
+    <Compile Include="Spine\AtlasAttachmentLoader.cs" />
+    <Compile Include="Spine\AtlasPage.cs" />
+    <Compile Include="Spine\AtlasRegion.cs" />
+    <Compile Include="Spine\Attachment.cs" />
+    <Compile Include="Spine\AttachmentLoader.cs" />
+    <Compile Include="Spine\AttachmentTimeline.cs" />
+    <Compile Include="Spine\AttachmentType.cs" />
+    <Compile Include="Spine\BlendMode.cs" />
+    <Compile Include="Spine\Bone.cs" />
+    <Compile Include="Spine\BoneData.cs" />
+    <Compile Include="Spine\BoundingBoxAttachment.cs" />
+    <Compile Include="Spine\ClippingAttachment.cs" />
+    <Compile Include="Spine\ConstraintData.cs" />
+    <Compile Include="Spine\CurveTimeline.cs" />
+    <Compile Include="Spine\CurveTimeline1.cs" />
+    <Compile Include="Spine\CurveTimeline2.cs" />
+    <Compile Include="Spine\DeformTimeline.cs" />
+    <Compile Include="Spine\DrawOrderTimeline.cs" />
+    <Compile Include="Spine\Event.cs" />
+    <Compile Include="Spine\EventData.cs" />
+    <Compile Include="Spine\EventQueue.cs" />
+    <Compile Include="Spine\EventTimeline.cs" />
+    <Compile Include="Spine\ExposedList.cs" />
+    <Compile Include="Spine\Format.cs" />
+    <Compile Include="Spine\HashSetExtensions.cs" />
+    <Compile Include="Spine\IBoneTimeline.cs" />
+    <Compile Include="Spine\IHasTextureRegion.cs" />
+    <Compile Include="Spine\IInterpolation.cs" />
+    <Compile Include="Spine\IkConstraint.cs" />
+    <Compile Include="Spine\IkConstraintData.cs" />
+    <Compile Include="Spine\IkConstraintTimeline.cs" />
+    <Compile Include="Spine\Inherit.cs" />
+    <Compile Include="Spine\InheritEnum.cs" />
+    <Compile Include="Spine\InheritTimeline.cs" />
+    <Compile Include="Spine\ISlotTimeline.cs" />
+    <Compile Include="Spine\IUpdatable.cs" />
+    <Compile Include="Spine\Json.cs" />
+    <Compile Include="Spine\MathUtils.cs" />
+    <Compile Include="Spine\MeshAttachment.cs" />
+    <Compile Include="Spine\MixBlend.cs" />
+    <Compile Include="Spine\MixDirection.cs" />
+    <Compile Include="Spine\PathAttachment.cs" />
+    <Compile Include="Spine\PathConstraint.cs" />
+    <Compile Include="Spine\PathConstraintData.cs" />
+    <Compile Include="Spine\PathConstraintMixTimeline.cs" />
+    <Compile Include="Spine\PathConstraintPositionTimeline.cs" />
+    <Compile Include="Spine\PathConstraintSpacingTimeline.cs" />
+    <Compile Include="Spine\PhysicsConstraint.cs" />
+    <Compile Include="Spine\PhysicsConstraintDampingTimeline.cs" />
+    <Compile Include="Spine\PhysicsConstraintData.cs" />
+    <Compile Include="Spine\PhysicsConstraintGravityTimeline.cs" />
+    <Compile Include="Spine\PhysicsConstraintInertiaTimeline.cs" />
+    <Compile Include="Spine\PhysicsConstraintMassTimeline.cs" />
+    <Compile Include="Spine\PhysicsConstraintMixTimeline.cs" />
+    <Compile Include="Spine\PhysicsConstraintResetTimeline.cs" />
+    <Compile Include="Spine\PhysicsConstraintStrengthTimeline.cs" />
+    <Compile Include="Spine\PhysicsConstraintTimeline.cs" />
+    <Compile Include="Spine\PhysicsConstraintWindTimeline.cs" />
+    <Compile Include="Spine\PointAttachment.cs" />
+    <Compile Include="Spine\Polygon.cs" />
+    <Compile Include="Spine\Pool.cs" />
+    <Compile Include="Spine\PositionMode.cs" />
+    <Compile Include="Spine\Pow.cs" />
+    <Compile Include="Spine\PowOut.cs" />
+    <Compile Include="Spine\Property.cs" />
+    <Compile Include="Spine\RegionAttachment.cs" />
+    <Compile Include="Spine\RGB2Timeline.cs" />
+    <Compile Include="Spine\RGBA2Timeline.cs" />
+    <Compile Include="Spine\RGBATimeline.cs" />
+    <Compile Include="Spine\RGBTimeline.cs" />
+    <Compile Include="Spine\RotateMode.cs" />
+    <Compile Include="Spine\RotateTimeline.cs" />
+    <Compile Include="Spine\ScaleTimeline.cs" />
+    <Compile Include="Spine\ScaleXTimeline.cs" />
+    <Compile Include="Spine\ScaleYTimeline.cs" />
+    <Compile Include="Spine\Sequence.cs" />
+    <Compile Include="Spine\SequenceMode.cs" />
+    <Compile Include="Spine\SequenceTimeline.cs" />
+    <Compile Include="Spine\ShearTimeline.cs" />
+    <Compile Include="Spine\ShearXTimeline.cs" />
+    <Compile Include="Spine\ShearYTimeline.cs" />
+    <Compile Include="Spine\Skeleton.cs" />
+    <Compile Include="Spine\SkeletonBinary.cs" />
+    <Compile Include="Spine\SkeletonBounds.cs" />
+    <Compile Include="Spine\SkeletonClipping.cs" />
+    <Compile Include="Spine\SkeletonData.cs" />
+    <Compile Include="Spine\SkeletonJson.cs" />
+    <Compile Include="Spine\SkeletonLoader.cs" />
+    <Compile Include="Spine\Skin.cs" />
+    <Compile Include="Spine\Slot.cs" />
+    <Compile Include="Spine\SlotData.cs" />
+    <Compile Include="Spine\SpacingMode.cs" />
+    <Compile Include="Spine\TextureFilter.cs" />
+    <Compile Include="Spine\TextureLoader.cs" />
+    <Compile Include="Spine\TextureRegion.cs" />
+    <Compile Include="Spine\TextureWrap.cs" />
+    <Compile Include="Spine\Timeline.cs" />
+    <Compile Include="Spine\TrackEntry.cs" />
+    <Compile Include="Spine\TransformConstraint.cs" />
+    <Compile Include="Spine\TransformConstraintData.cs" />
+    <Compile Include="Spine\TransformConstraintTimeline.cs" />
+    <Compile Include="Spine\TranslateTimeline.cs" />
+    <Compile Include="Spine\TranslateXTimeline.cs" />
+    <Compile Include="Spine\TranslateYTimeline.cs" />
+    <Compile Include="Spine\Triangulator.cs" />
+    <Compile Include="Spine\VertexAttachment.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

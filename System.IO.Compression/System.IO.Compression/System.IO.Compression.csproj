@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7E743C7B-97BC-4604-82FB-4ED0E3F89B23}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>System</RootNamespace>
+    <AssemblyName>System.IO.Compression</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>..\..\..\Managed\System.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IO\Compression\BlockType.cs" />
+    <Compile Include="IO\Compression\CheckSumAndSizeWriteStream.cs" />
+    <Compile Include="IO\Compression\CopyEncoder.cs" />
+    <Compile Include="IO\Compression\Crc32Helper.cs" />
+    <Compile Include="IO\Compression\DeflateInput.cs" />
+    <Compile Include="IO\Compression\DeflateManagedStream.cs" />
+    <Compile Include="IO\Compression\DeflaterManaged.cs" />
+    <Compile Include="IO\Compression\FastEncoder.cs" />
+    <Compile Include="IO\Compression\FastEncoderStatics.cs" />
+    <Compile Include="IO\Compression\FastEncoderWindow.cs" />
+    <Compile Include="IO\Compression\HuffmanTree.cs" />
+    <Compile Include="IO\Compression\IFileFormatReader.cs" />
+    <Compile Include="IO\Compression\IFileFormatWriter.cs" />
+    <Compile Include="IO\Compression\InflaterManaged.cs" />
+    <Compile Include="IO\Compression\InflaterState.cs" />
+    <Compile Include="IO\Compression\InputBuffer.cs" />
+    <Compile Include="IO\Compression\Match.cs" />
+    <Compile Include="IO\Compression\MatchState.cs" />
+    <Compile Include="IO\Compression\OutputBuffer.cs" />
+    <Compile Include="IO\Compression\OutputWindow.cs" />
+    <Compile Include="IO\Compression\PositionPreservingWriteOnlyStreamWrapper.cs" />
+    <Compile Include="IO\Compression\SubReadStream.cs" />
+    <Compile Include="IO\Compression\WrappedStream.cs" />
+    <Compile Include="IO\Compression\Zip64EndOfCentralDirectoryLocator.cs" />
+    <Compile Include="IO\Compression\Zip64EndOfCentralDirectoryRecord.cs" />
+    <Compile Include="IO\Compression\Zip64ExtraField.cs" />
+    <Compile Include="IO\Compression\ZipArchive.cs" />
+    <Compile Include="IO\Compression\ZipArchiveEntry.cs" />
+    <Compile Include="IO\Compression\ZipArchiveMode.cs" />
+    <Compile Include="IO\Compression\ZipCentralDirectoryFileHeader.cs" />
+    <Compile Include="IO\Compression\ZipEndOfCentralDirectoryBlock.cs" />
+    <Compile Include="IO\Compression\ZipGenericExtraField.cs" />
+    <Compile Include="IO\Compression\ZipHelper.cs" />
+    <Compile Include="IO\Compression\ZipLocalFileHeader.cs" />
+    <Compile Include="IO\Compression\ZipVersionMadeByPlatform.cs" />
+    <Compile Include="IO\Compression\ZipVersionNeededValues.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SR.cs" />
+    <Compile Include="Threading\Tasks\TaskToApm.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,37 @@
+﻿using System;
+
+namespace YgomSystem.Network
+{
+	// Token: 0x02000710 RID: 1808
+	public enum FriendCode
+	{
+		// Token: 0x04003250 RID: 12880
+		NONE,
+		// Token: 0x04003251 RID: 12881
+		ERROR,
+		// Token: 0x04003252 RID: 12882
+		FATAL,
+		// Token: 0x04003253 RID: 12883
+		CRITICAL,
+		// Token: 0x04003254 RID: 12884
+		INVALID_PARAM = 2000,
+		// Token: 0x04003255 RID: 12885
+		ACCOUNT_NOT_EXIST,
+		// Token: 0x04003256 RID: 12886
+		ACCOUNT_OWN,
+		// Token: 0x04003257 RID: 12887
+		ALREADY_FOLLOWED,
+		// Token: 0x04003258 RID: 12888
+		NO_FOLLOW_ACCOUNT,
+		// Token: 0x04003259 RID: 12889
+		FOLLOW_MAX,
+		// Token: 0x0400325A RID: 12890
+		SAME_VALUE,
+		// Token: 0x0400325B RID: 12891
+		ALREADY_BLOCKED,
+		// Token: 0x0400325C RID: 12892
+		NO_BLOCK_ACCOUNT,
+		// Token: 0x0400325D RID: 12893
+		BLOCK_MAX
+	}
+}

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BC90B0DB-8A5D-4BA6-AF27-DF8E41A4E2CE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UnityEngine.TextCore</RootNamespace>
+    <AssemblyName>UnityEngine.TextCoreFontEngineModule</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>..\..\..\Managed\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>..\..\..\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FaceInfo.cs" />
+    <Compile Include="Glyph.cs" />
+    <Compile Include="GlyphClassDefinitionType.cs" />
+    <Compile Include="GlyphMetrics.cs" />
+    <Compile Include="GlyphRect.cs" />
+    <Compile Include="LowLevel\FontEngine.cs" />
+    <Compile Include="LowLevel\FontEngineError.cs" />
+    <Compile Include="LowLevel\FontEngineUtilities.cs" />
+    <Compile Include="LowLevel\FontFeatureLookupFlags.cs" />
+    <Compile Include="LowLevel\FontReference.cs" />
+    <Compile Include="LowLevel\GlyphAdjustmentRecord.cs" />
+    <Compile Include="LowLevel\GlyphAnchorPoint.cs" />
+    <Compile Include="LowLevel\GlyphLoadFlags.cs" />
+    <Compile Include="LowLevel\GlyphMarshallingStruct.cs" />
+    <Compile Include="LowLevel\GlyphPackingMode.cs" />
+    <Compile Include="LowLevel\GlyphPairAdjustmentRecord.cs" />
+    <Compile Include="LowLevel\GlyphRenderMode.cs" />
+    <Compile Include="LowLevel\GlyphValueRecord.cs" />
+    <Compile Include="LowLevel\LigatureSubstitutionRecord.cs" />
+    <Compile Include="LowLevel\MarkPositionAdjustment.cs" />
+    <Compile Include="LowLevel\MarkToBaseAdjustmentRecord.cs" />
+    <Compile Include="LowLevel\MarkToMarkAdjustmentRecord.cs" />
+    <Compile Include="LowLevel\MultipleSubstitutionRecord.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

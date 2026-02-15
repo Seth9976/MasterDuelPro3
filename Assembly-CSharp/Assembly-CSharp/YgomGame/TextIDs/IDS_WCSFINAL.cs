@@ -1,0 +1,33 @@
+﻿using System;
+
+namespace YgomGame.TextIDs
+{
+	// Token: 0x020008AF RID: 2223
+	public enum IDS_WCSFINAL
+	{
+		// Token: 0x04007EB8 RID: 32440
+		ENTRY,
+		// Token: 0x04007EB9 RID: 32441
+		START_DUEL,
+		// Token: 0x04007EBA RID: 32442
+		INBATTLE,
+		// Token: 0x04007EBB RID: 32443
+		SPECTATE,
+		// Token: 0x04007EBC RID: 32444
+		READY,
+		// Token: 0x04007EBD RID: 32445
+		REPLAY,
+		// Token: 0x04007EBE RID: 32446
+		PREPARE,
+		// Token: 0x04007EBF RID: 32447
+		FINISH,
+		// Token: 0x04007EC0 RID: 32448
+		ENTER_1STSTAGE,
+		// Token: 0x04007EC1 RID: 32449
+		ENTER_TOURNAMENT,
+		// Token: 0x04007EC2 RID: 32450
+		TOURN_FINALDATE,
+		// Token: 0x04007EC3 RID: 32451
+		LEADER_WIN_COUNT
+	}
+}
